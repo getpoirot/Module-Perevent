@@ -16,8 +16,8 @@ return [
                     'client' => 'master',
                     // ensure indexes
                     'indexes' => [
-                        ['key' => ['uid' => 1]],
-                        ['key' => ['uid' => 1], 'unique' => true ],
+                        ['key' => ['cmd_hash' => 1]],
+                        ['key' => ['cmd_hash' => 1], 'unique' => true ],
                         // db.database_name.collection_name.createIndex({"datetime_expiration_mongo": 1}, {expireAfterSeconds: 0});
                         ['key' => ['datetime_expiration_mongo' => 1], 'expireAfterSeconds' => 0 ],
                     ],],],

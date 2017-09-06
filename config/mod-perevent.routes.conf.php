@@ -12,7 +12,7 @@ return [
         'routes' => [
 
             ## GET /perevent/{{cmd_hash}}
-            'perevent' => [
+            'fire' => [
                 'route'   => 'RouteSegment',
                 'options' => [
                     'criteria' => '/:cmd_hash~\w+~',

@@ -21,8 +21,8 @@ class FireEventAction
         */
 
         $manager = \Module\Perevent\Services::Perevent();
-        $result  = $manager->fireEvent($cmd_hash);
+        $result  = $manager->fireEvent($cmd_hash, ['cmd_hash' => $cmd_hash]);
 
-        return [ListenerDispatch::RESULT_DISPATCH => $result];
+        return [ ListenerDispatch::RESULT_DISPATCH => $result ];
     }
 }
