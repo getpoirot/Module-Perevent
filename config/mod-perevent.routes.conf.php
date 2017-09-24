@@ -15,7 +15,7 @@ return [
             'fire' => [
                 'route'   => 'RouteSegment',
                 'options' => [
-                    'criteria' => '/:cmd_hash~\w+~',
+                    'criteria' => '/:cmd_hash~\w.+~',
                     'match_whole' => true,
                 ],
                 'params'  => [
