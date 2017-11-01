@@ -25,6 +25,9 @@ namespace Module\Perevent
         , Sapi\Module\Feature\iFeatureModuleNestActions
         , Sapi\Module\Feature\iFeatureOnPostLoadModulesGrabServices
     {
+        const CONF = 'module.perevents';
+
+
         /**
          * Init Module Against Application
          *
@@ -121,24 +124,12 @@ namespace Module\Perevent
 
 namespace Module\Perevent
 {
-    use Poirot\Perevent\ManagerOfPerevents;
+    use Module\Perevent\Services\Perevents\PluginsPereventsManager;
 
 
     /**
-     * @method static ManagerOfPerevents Perevent()
+     * @method static PluginsPereventsManager Perevent()
      */
     class Services extends \IOC
-    { }
-}
-
-namespace Module\Perevent\Services
-{
-    use Poirot\Perevent\Repo\RepoMongo;
-
-
-    /**
-     * @method static RepoMongo Perevents()
-     */
-    class Repository extends \IOC
     { }
 }

@@ -5,7 +5,7 @@ use Module\MongoDriver\Services\aServiceRepository;
 use Poirot\Perevent\Repo\RepoMongo;
 
 
-class PereventsRepoService
+class repoMongoPerevents
     extends aServiceRepository
 {
     /** @var string Service Name */
