@@ -15,13 +15,14 @@ return [
             'fire' => [
                 'route'   => 'RouteSegment',
                 'options' => [
-                    'criteria' => '/:cmd_hash~\w.+~',
+                    'criteria' => '/:perevent~\w+~/:cmd_hash~\w.+~',
                     'match_whole' => true,
                 ],
                 'params'  => [
                     ListenerDispatch::ACTIONS => [
                         '/module/perevent/actions/FireEventAction',
                     ],
+                    'perevent' => 'default' // default perevent manager
                 ],
             ],
 

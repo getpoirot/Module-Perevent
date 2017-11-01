@@ -7,7 +7,7 @@ return [
     Module\Perevent\Module::CONF => [
         ServicePereventManagers::CONF => [
             'services' => [
-                'persist' => new \Poirot\Ioc\instance(
+                'default' => new \Poirot\Ioc\instance(
                     Poirot\Perevent\ManagerOfPerevent::class,
                     [
                         'repository' => new \Poirot\Ioc\instance('/module/perevent/services/repository/repoMongodb'),
@@ -19,10 +19,15 @@ return [
                         })
                     ]
                 ),
+                /*
                 'onthefly' => new \Poirot\Ioc\instance(
                     Poirot\Perevent\ManagerOfPerevent::class,
                     [
-                        'repository' => null,
+                        'repository' => new Predis\Client([
+                            'schema' => 'tcp',
+                            'host'   => 'db-master-redis',
+                            'port'   => 6379
+                        ]),
                         'plugins'    => \Poirot\Std\catchIt(function () {
                             if (false === $c = \Poirot\Config\load(__DIR__.'/perevent/command-plugins'))
                                 throw new \Exception('Config (perevent/command-plugins) not loaded.');
@@ -31,6 +36,7 @@ return [
                         })
                     ]
                 ),
+                */
             ],
         ],
     ],
