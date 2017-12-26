@@ -4,6 +4,7 @@ namespace Module\Perevent\Actions;
 use Module\Foundation\Actions\aAction;
 use Module\HttpFoundation\Events\Listener\ListenerDispatch;
 use Poirot\Application\Exception\exRouteNotMatch;
+use Poirot\Perevent\ManagerOfPerevent;
 
 
 class FireEventAction
@@ -18,7 +19,6 @@ class FireEventAction
             'command' => 'user_setAmount',
             'args'    => [ ],
         ]));
-        die();
         */
 
         if (! \Module\Perevent\Services::Perevent()->has($perevent) )
@@ -27,6 +27,8 @@ class FireEventAction
                 , $perevent
             ));
 
+
+        /** @var ManagerOfPerevent $manager */
         $manager = \Module\Perevent\Services::Perevent()->get($perevent);
         $result  = $manager->fireEvent($cmd_hash, ['cmd_hash' => $cmd_hash]);
 
